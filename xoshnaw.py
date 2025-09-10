@@ -5,7 +5,6 @@ with open("stringliteral.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 def is_printable(s):
-    # check if at least 70% of characters are printable (letters, digits, symbols, space)
     printable = sum(c in string.printable for c in s)
     return printable / max(len(s), 1) > 0.7
 
@@ -16,3 +15,4 @@ with open("readable_strings.txt", "w", encoding="utf-8") as out:
         out.write(f'{entry["address"]}: {entry["value"]}\n')
 
 print(f"Extracted {len(filtered)} readable strings → check readable_strings.txt")
+
